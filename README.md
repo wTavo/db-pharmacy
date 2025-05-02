@@ -1,152 +1,189 @@
-🧬 Base de Datos para Farmacia con Envío a Domicilio
-Este repositorio contiene el diseño y estructura de una base de datos pensada para el manejo de una farmacia con funciones de delivery. El objetivo es ofrecer una solución robusta para la gestión de productos, usuarios, recetas médicas, compras, direcciones y control de inventario, todo con control de roles y permisos.
+📦 Base de Datos para Farmacia con Entrega a Domicilio
 
-📌 Descripción General
-La base de datos está orientada a la gestión de productos farmacéuticos, con especial atención al control de medicamentos, compras y logística de envío a domicilio.
+Este repositorio contiene la estructura de una base de datos orientada al manejo de productos farmacéuticos, ventas, usuarios, direcciones, recetas médicas y control de roles para una aplicación móvil de tipo delivery enfocada en farmacias.
 
-Incluye tablas interrelacionadas que permiten:
+📊 Descripción General
 
-Almacenamiento detallado de medicamentos.
+La base de datos fue diseñada para cumplir con los requerimientos de una farmacia moderna con servicios en línea, permitiendo:
 
-Gestión de usuarios con diferentes roles.
+Gestión de usuarios y direcciones.
 
-Registro de recetas médicas.
+Administración de productos y control de inventario.
 
-Control de compras y existencias.
+Registro de compras y generación de facturas.
 
-Registro preciso de direcciones.
+Manejo de recetas médicas.
 
-Relación con claves oficiales del SAT.
+Control de roles y permisos.
 
-Seguridad y control de acceso mediante roles.
+Recolección de reseñas de productos.
 
-🗂️ Estructura Principal
+🧱 Estructura de la Base de Datos
 
-🔹 productos_medicamentos
-Contiene la información médica y comercial de cada medicamento:
+🧾 Tabla productos
+Contiene productos farmacéuticos generales:
 
-Nombre comercial
+nombre_comercial
 
-Principio activo
+detalles
 
-Concentración
+precio
 
-Presentación comercial
+existencia
 
-Forma farmacéutica
+Relacionada con:
 
-Vía de administración
+clave_productos (claves del SAT).
 
-Laboratorio
+compras
 
-Existencia
+reseñas
 
-Precio
+🧾 Tabla clave_productos
+Contiene claves del SAT:
 
-Clave SAT (relacionada con clave_productos)
+clave_sat
 
-Ideal para búsqueda avanzada y control de inventario.
+descripcion
 
-🔹 clave_productos
-Tabla que almacena las claves oficiales del SAT junto con su descripción y palabras clave. Cada producto o medicamento debe vincularse con una clave SAT válida.
+palabras_clave
 
-🔹 usuarios
-Gestión de los usuarios del sistema. Campos clave:
+Fuente: SAT - Claves de productos o servicios
 
-Nombre y apellidos
+🧾 Tabla compras y factura
+compras: vincula productos con usuarios.
 
-Correo electrónico
+factura: contiene método de pago, total pagado y fecha.
 
-Teléfono
+👤 Tabla usuarios
+Contiene:
 
-Contraseña
+nombre, apellidos
 
-Rol
+correo, telefono
 
-RFC
+password, rol
 
-Cédula profesional (si aplica)
+RFC, cedula_profesional (si aplica), CURP
 
-CURP
+Asociado con:
 
-Cada usuario puede tener múltiples direcciones (ver domicilio_usuarios) y está vinculado a compras, recetas o tareas según su rol.
+domicilio_usuarios
 
-🔹 domicilio_usuarios & codigos_postales
-Permiten una gestión detallada de direcciones, esencial para el sistema de entregas. Incluyen:
+recetas
 
-Calle, número interior/exterior, referencias
+reseñas
 
-Código postal
+📬 Tabla domicilio_usuarios
+Permite múltiples direcciones por usuario:
 
-Información del asentamiento, municipio, estado, ciudad y zona
+calle, numero_ext, numero_int
 
-Optimiza la logística de envío, validación y cobertura.
+referencias, codigo_postal
 
-🔹 compras & factura
-Registro de transacciones realizadas por los usuarios:
+Relacionada con:
 
-Fecha
+codigos_postales
 
-Productos adquiridos
+🧾 Tabla codigos_postales
+Contiene información oficial del Servicio Postal Mexicano:
 
-Total pagado
+asentamiento, tipo_asentamiento
 
-Método de pago
+municipio, estado, ciudad, zona
 
-La factura está asociada directamente a las compras.
+Fuente: Servicio Postal Mexicano
+Última Actualización: Abril 30 de 2025
 
-🔹 recetas
-Controla medicamentos prescritos por profesionales de la salud:
+💊 Tabla recetas
+Registro médico de recetas:
 
-ID del médico y su cédula profesional
+id_receta, id_medico, cedula_profesional
 
-Medicamento prescrito
+medicamento, unidad_medida, dosis
 
-Dosis, frecuencia, vía de administración
+frecuencia, via_administracion
 
-Fechas de inicio/fin
+fecha_inicio, fecha_fin, indicaciones
 
-Indicaciones adicionales
+Referencias:
 
-Facilita el cumplimiento legal y la trazabilidad de medicamentos controlados.
+Medicamentos PLM
 
-🔹 reseñas
-Los usuarios pueden dejar comentarios y valoraciones sobre los productos que han adquirido, fomentando la transparencia y confianza en el sistema.
+🌟 Tabla reseñas
+Los usuarios pueden calificar productos después de comprarlos.
 
-🔹 roles
-Define y restringe las acciones que puede realizar cada tipo de usuario:
+🔐 Tabla roles
+Define permisos por usuario:
 
-Rol	Permisos principales
-DBA	Control total sobre la base de datos.
-Farmacéutico	Lectura y modificación de productos, inventario y recetas.
-Doctor	Inserción de recetas, consulta de productos.
-Cliente	Consulta de productos, creación de pedidos.
-Repartidor	Lectura y actualización de pedidos asignados.
-Auditor	Consulta de toda la información sin permisos de modificación.
+Rol	Permisos
+DBA	Todos los privilegios
+Farmacéutico	SELECT, INSERT, UPDATE en productos, inventario, recetas
+Doctor	INSERT en recetas, SELECT en productos
+Cliente	SELECT en productos, INSERT en compras
+Repartidor	SELECT, UPDATE en pedidos
+Auditor	Solo lectura sobre toda la base de datos
 
-Esto garantiza la seguridad, privacidad y eficiencia del sistema.
+🔁 Interrelaciones Importantes
 
-📊 Análisis y Reportes
-Gracias a su diseño relacional, la base de datos permite generar reportes clave como:
+Productos ↔ Compras ↔ Factura
 
-Productos más vendidos
+Usuarios ↔ Domicilios
 
-Historial de disponibilidad de medicamentos
+Usuarios ↔ Recetas
 
-Zonas con mayor demanda
+Productos ↔ Reseñas
 
-Frecuencia de métodos de pago
+Estas relaciones permiten generar reportes como:
 
-Evaluación de desempeño por rol o usuario
+Productos más vendidos.
 
-🛠️ Funcionalidades Soportadas
-Inventario en tiempo real: Se actualiza tras cada compra o ajuste manual.
+Fechas con mayor demanda.
 
-Validación de recetas: Asociación directa con médicos y sus cédulas.
+Métodos de pago más usados.
 
-Rutas de entrega optimizadas: Gracias al desglose geográfico del domicilio.
+Opiniones de clientes sobre productos.
 
-Control administrativo: Compatible con auditorías y políticas fiscales.
+Control y validación de recetas médicas.
 
-📍 Conclusión
-Esta base de datos está diseñada para cubrir todos los procesos clave de una farmacia moderna con servicios en línea, permitiendo escalar el sistema con seguridad y eficiencia. La separación por roles, el control de medicamentos, y el enfoque en la experiencia de usuario hacen que sea una herramienta poderosa para gestionar ventas, entregas, inventarios y más.
+📦 Gestión de Inventario
+
+Cuando se realiza una compra:
+
+Se actualiza automáticamente el stock.
+
+Si el producto se agota, se puede emitir una alerta para reposición.
+
+
+🧑‍⚕️ Normativa de Referencia
+
+Esta base de datos se diseñó tomando como referencia la siguiente norma oficial mexicana:
+
+📄 NORMA Oficial Mexicana NOM-024-SSA3-2010
+"Que establece los objetivos funcionales y funcionalidades que deberán observar los productos de sistemas de expediente clínico electrónico..."
+
+Fuente: NOM-024-SSA3-2010 - DOF
+
+Se consideraron principios de:
+
+Interoperabilidad
+
+Confidencialidad y seguridad
+
+Uso de catálogos oficiales
+
+Procesamiento clínico válido
+
+🧮 Fuentes de Datos Utilizadas
+SAT – Claves de productos o servicios
+https://www.gob.mx/sat/acciones-y-programas/consulta-mas-claves-de-productos-o-servicios-sugeridas-asi-como-su-claves-de-unidades-de-medida
+
+Medicamentos PLM – Catálogo de medicamentos
+https://www.medicamentosplm.com/
+
+Servicio Postal Mexicano – Catálogo Nacional de Códigos Postales
+https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/CodigoPostal_Exportar.aspx
+
+✅ Conclusión
+
+Esta base de datos está diseñada no solo para almacenar datos, sino para funcionar como una solución integral que cumpla estándares nacionales, facilite la logística, mantenga la seguridad de la información médica y mejore la experiencia de usuarios en un entorno digital de farmacia y atención médica moderna.
