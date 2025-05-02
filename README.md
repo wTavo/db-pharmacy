@@ -6,56 +6,56 @@ Este repositorio contiene la estructura de una base de datos orientada al manejo
 
 La base de datos fue diseñada para cumplir con los requerimientos de una farmacia moderna con servicios en línea, permitiendo:
 
-Gestión de usuarios y direcciones.
+* Gestión de usuarios y direcciones.
 
-Administración de productos y control de inventario.
+* Administración de productos y control de inventario.
 
-Registro de compras y generación de facturas.
+* Registro de compras y generación de facturas.
 
-Manejo de recetas médicas.
+* Manejo de recetas médicas.
 
-Control de roles y permisos.
+* Control de roles y permisos.
 
-Recolección de reseñas de productos.
+* Recolección de reseñas de productos.
 
-🧱 Estructura de la Base de Datos
+## 🧱 Estructura de la Base de Datos
 
-🧾 Tabla productos
+#### 🧾 Tabla productos
 Contiene productos farmacéuticos generales:
 
-nombre_comercial
+> nombre_comercial
 
-detalles
+> detalles
 
-precio
+> precio
 
-existencia
+> existencia
 
 Relacionada con:
 
-clave_productos (claves del SAT).
+> clave_productos (claves del SAT).
 
-compras
+> compras
 
-reseñas
+> reseñas
 
-🧾 Tabla clave_productos
+#### 🧾 Tabla clave_productos
 Contiene claves del SAT:
 
-clave_sat
+> clave_sat
 
-descripcion
+> descripcion
 
-palabras_clave
+> palabras_clave
 
-Fuente: SAT - Claves de productos o servicios
+**Fuente: SAT - Claves de productos o servicios**
 
-🧾 Tabla compras y factura
-compras: vincula productos con usuarios.
+#### 🧾 Tabla compras y factura
+> Tabla compras: vincula productos con usuarios.
 
-factura: contiene método de pago, total pagado y fecha.
+> Tabla factura: contiene método de pago, total pagado y fecha.
 
-👤 Tabla usuarios
+#### 🧾 Tabla usuarios
 Contiene:
 
 nombre, apellidos
@@ -74,7 +74,7 @@ recetas
 
 reseñas
 
-📬 Tabla domicilio_usuarios
+#### 🧾 Tabla domicilio_usuarios
 Permite múltiples direcciones por usuario:
 
 calle, numero_ext, numero_int
@@ -85,7 +85,7 @@ Relacionada con:
 
 codigos_postales
 
-🧾 Tabla codigos_postales
+#### 🧾 Tabla codigos_postales
 Contiene información oficial del Servicio Postal Mexicano:
 
 asentamiento, tipo_asentamiento
@@ -95,7 +95,7 @@ municipio, estado, ciudad, zona
 Fuente: Servicio Postal Mexicano
 Última Actualización: Abril 30 de 2025
 
-💊 Tabla recetas
+#### 🧾 Tabla recetas
 Registro médico de recetas:
 
 id_receta, id_medico, cedula_profesional
@@ -110,10 +110,10 @@ Referencias:
 
 Medicamentos PLM
 
-🌟 Tabla reseñas
+#### 🧾 Tabla reseñas
 Los usuarios pueden calificar productos después de comprarlos.
 
-🔐 Tabla roles
+#### 🧾 Tabla roles
 Define permisos por usuario:
 
 Rol	Permisos
