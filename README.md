@@ -2,7 +2,7 @@
 
 Este repositorio contiene la estructura de una base de datos orientada al manejo de productos farmacéuticos, ventas, usuarios, direcciones, recetas médicas y control de roles para una aplicación móvil de tipo delivery enfocada en farmacias.
 
-📊 Descripción General
+## 📊 Descripción General
 
 La base de datos fue diseñada para cumplir con los requerimientos de una farmacia moderna con servicios en línea, permitiendo:
 
