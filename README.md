@@ -1,7 +1,4 @@
 <h1 align="center">
-  <br>
-    <a href="https://github.com/ninpl/README-Template"><img src="./res/logo.png" alt="LogoRepo" width="100"></a>
-  <br>
   Pharmacy DataBase
   <br>
 </h1>
