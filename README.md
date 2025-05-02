@@ -20,109 +20,111 @@ La base de datos fue diseñada para cumplir con los requerimientos de una farmac
 
 ## 🧱 Estructura de la Base de Datos
 
-#### 🧾 Tabla productos
-Contiene productos farmacéuticos generales:
+### 🧾 Tabla productos
+***Contiene productos farmacéuticos generales:***
 
-> nombre_comercial
+`nombre_comercial`
 
-> detalles
+`detalles`
 
-> precio
+`precio`
 
-> existencia
+`existencia`
 
-Relacionada con:
+***Relacionada con:***
 
-> clave_productos (claves del SAT).
+`clave_productos (claves del SAT)`
 
-> compras
+`compras`
 
-> reseñas
+`reseñas`
 
-#### 🧾 Tabla clave_productos
-Contiene claves del SAT:
+### 🧾 Tabla clave_productos
+***Contiene claves del SAT:***
 
-> clave_sat
+`clave_sat`
 
-> descripcion
+`descripcion`
 
-> palabras_clave
+`palabras_clave`
 
 **Fuente: SAT - Claves de productos o servicios**
 
-#### 🧾 Tabla compras y factura
-> Tabla compras: vincula productos con usuarios.
+### 🧾 Tabla compras y factura
+`Tabla compras: vincula productos con usuarios`
 
-> Tabla factura: contiene método de pago, total pagado y fecha.
+`Tabla factura: contiene método de pago, total pagado y fecha`
 
-#### 🧾 Tabla usuarios
-Contiene:
+### 🧾 Tabla usuarios
+***Contiene:***
 
-nombre, apellidos
+`nombre, apellidos`
 
-correo, telefono
+`correo, telefono`
 
-password, rol
+`password, rol`
 
-RFC, cedula_profesional (si aplica), CURP
+`RFC, cedula_profesional (si aplica), CURP`
 
-Asociado con:
+***Asociado con:***
 
-domicilio_usuarios
+`domicilio_usuarios`
 
-recetas
+`recetas`
 
-reseñas
+`reseñas`
 
-#### 🧾 Tabla domicilio_usuarios
-Permite múltiples direcciones por usuario:
+### 🧾 Tabla domicilio_usuarios
+***Permite múltiples direcciones por usuario:***
 
-calle, numero_ext, numero_int
+`calle, numero_ext, numero_int`
 
-referencias, codigo_postal
+`referencias, codigo_postal`
 
-Relacionada con:
+***Relacionada con:***
 
-codigos_postales
+`codigos_postales`
 
-#### 🧾 Tabla codigos_postales
-Contiene información oficial del Servicio Postal Mexicano:
+### 🧾 Tabla codigos_postales
+***Contiene información oficial del Servicio Postal Mexicano:***
 
-asentamiento, tipo_asentamiento
+`asentamiento, tipo_asentamiento`
 
-municipio, estado, ciudad, zona
+`municipio, estado, ciudad, zona`
 
-Fuente: Servicio Postal Mexicano
-Última Actualización: Abril 30 de 2025
+**Fuente: Servicio Postal Mexicano**
+**Última Actualización: 2025**
 
-#### 🧾 Tabla recetas
-Registro médico de recetas:
+### 🧾 Tabla recetas
+***Registro médico de recetas:***
 
-id_receta, id_medico, cedula_profesional
+`id_receta, id_medico, cedula_profesional`
 
-medicamento, unidad_medida, dosis
+`medicamento, unidad_medida, dosis`
 
-frecuencia, via_administracion
+`frecuencia, via_administracion`
 
-fecha_inicio, fecha_fin, indicaciones
+`fecha_inicio, fecha_fin, indicaciones`
 
-Referencias:
+**Fuente: Medicamentos PLM**
 
-Medicamentos PLM
+### 🧾 Tabla reseñas
+`Los usuarios pueden calificar productos después de comprarlos`
 
-#### 🧾 Tabla reseñas
-Los usuarios pueden calificar productos después de comprarlos.
+### 🧾 Tabla roles
+***Define permisos por usuario:***
 
-#### 🧾 Tabla roles
-Define permisos por usuario:
+`DBA - Todos los privilegios`
 
-Rol	Permisos
-DBA	Todos los privilegios
-Farmacéutico	SELECT, INSERT, UPDATE en productos, inventario, recetas
-Doctor	INSERT en recetas, SELECT en productos
-Cliente	SELECT en productos, INSERT en compras
-Repartidor	SELECT, UPDATE en pedidos
-Auditor	Solo lectura sobre toda la base de datos
+`Farmacéutico -	SELECT, INSERT, UPDATE en productos, inventario, recetas`
+
+`Doctor - INSERT en recetas, SELECT en productos`
+
+`Cliente - SELECT en productos, INSERT en compras`
+
+`Repartidor - SELECT, UPDATE en pedidos`
+
+`Auditor - Solo lectura sobre toda la base de datos`
 
 🔁 Interrelaciones Importantes
 
