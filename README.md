@@ -126,43 +126,43 @@ La base de datos fue diseñada para cumplir con los requerimientos de una farmac
 
 `Auditor - Solo lectura sobre toda la base de datos`
 
-🔁 Interrelaciones Importantes
+### 🔁 Interrelaciones Importantes
 
-Productos ↔ Compras ↔ Factura
+`Productos ↔ Compras ↔ Factura`
 
-Usuarios ↔ Domicilios
+`Usuarios ↔ Domicilios`
 
-Usuarios ↔ Recetas
+`Usuarios ↔ Recetas`
 
-Productos ↔ Reseñas
+`Productos ↔ Reseñas`
 
-Estas relaciones permiten generar reportes como:
+***Estas relaciones permiten generar reportes como:***
 
-Productos más vendidos.
+* Productos más vendidos.
 
-Fechas con mayor demanda.
+* Fechas con mayor demanda.
 
-Métodos de pago más usados.
+* Métodos de pago más usados.
 
-Opiniones de clientes sobre productos.
+* Opiniones de clientes sobre productos.
 
-Control y validación de recetas médicas.
+* Control y validación de recetas médicas.
 
-📦 Gestión de Inventario
+### 📦 Gestión de Inventario
 
-Cuando se realiza una compra:
+***Cuando se realiza una compra:***
 
-Se actualiza automáticamente el stock.
+* Se actualiza automáticamente el stock.
 
-Si el producto se agota, se puede emitir una alerta para reposición.
+* Si el producto se agota, se puede emitir una alerta para reposición.
 
 
-🧑‍⚕️ Normativa de Referencia
+## 🧑‍⚕️ Normativa de Referencia
 
 Esta base de datos se diseñó tomando como referencia la siguiente norma oficial mexicana:
 
 📄 NORMA Oficial Mexicana NOM-024-SSA3-2010
-"Que establece los objetivos funcionales y funcionalidades que deberán observar los productos de sistemas de expediente clínico electrónico..."
+**"Que establece los objetivos funcionales y funcionalidades que deberán observar los productos de sistemas de expediente clínico electrónico..."**
 
 Fuente: NOM-024-SSA3-2010 - DOF
 
@@ -176,7 +176,7 @@ Uso de catálogos oficiales
 
 Procesamiento clínico válido
 
-🧮 Fuentes de Datos Utilizadas
+## 🧮 Fuentes de Datos Utilizadas
 SAT – Claves de productos o servicios
 https://www.gob.mx/sat/acciones-y-programas/consulta-mas-claves-de-productos-o-servicios-sugeridas-asi-como-su-claves-de-unidades-de-medida
 
@@ -186,6 +186,6 @@ https://www.medicamentosplm.com/
 Servicio Postal Mexicano – Catálogo Nacional de Códigos Postales
 https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/CodigoPostal_Exportar.aspx
 
-✅ Conclusión
+## ✅ Conclusión
 
-Esta base de datos está diseñada no solo para almacenar datos, sino para funcionar como una solución integral que cumpla estándares nacionales, facilite la logística, mantenga la seguridad de la información médica y mejore la experiencia de usuarios en un entorno digital de farmacia y atención médica moderna.
+Esta base de datos está diseñada no solo para almacenar datos, sino para funcionar como una solución que cumpla estándares nacionales, facilite la logística, mantenga la seguridad de la información médica y mejore la experiencia de usuarios en un entorno digital de farmacia y atención médica.
