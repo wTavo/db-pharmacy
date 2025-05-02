@@ -1,6 +1,6 @@
 # 📦 Base de Datos para Farmacia con Entrega a Domicilio
 
-Este repositorio contiene la estructura de una base de datos orientada al manejo de productos farmacéuticos, ventas, usuarios, direcciones, recetas médicas y control de roles para una aplicación móvil de tipo delivery enfocada en farmacias.
+Este repositorio contiene la estructura de una base de datos orientada al manejo de productos farmacéuticos, ventas, usuarios, direcciones, recetas médicas y control de roles enfocada para una aplicación móvil de tipo delivery para farmacias.
 
 ## 📊 Descripción General
 
