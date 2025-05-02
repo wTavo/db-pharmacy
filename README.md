@@ -48,7 +48,7 @@ La base de datos fue diseñada para cumplir con los requerimientos de una farmac
 
 `palabras_clave`
 
-**Fuente: SAT - Claves de productos o servicios**
+**Fuente:** [SAT - Claves de productos o servicios](https://www.gob.mx/sat/acciones-y-programas/consulta-mas-claves-de-productos-o-servicios-sugeridas-asi-como-su-claves-de-unidades-de-medida)
 
 ### 🧾 Tabla compras y factura
 `Tabla compras: vincula productos con usuarios`
@@ -92,7 +92,7 @@ La base de datos fue diseñada para cumplir con los requerimientos de una farmac
 
 `municipio, estado, ciudad, zona`
 
-**Fuente: Servicio Postal Mexicano**
+**Fuente:** [Servicio Postal Mexicano](https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/CodigoPostal_Exportar.aspx)
 **Última Actualización: 2025**
 
 ### 🧾 Tabla recetas
@@ -106,7 +106,7 @@ La base de datos fue diseñada para cumplir con los requerimientos de una farmac
 
 `fecha_inicio, fecha_fin, indicaciones`
 
-**Fuente: Medicamentos PLM**
+**Fuente:** [Medicamentos PLM](https://www.medicamentosplm.com/)
 
 ### 🧾 Tabla reseñas
 `Los usuarios pueden calificar productos después de comprarlos`
@@ -164,27 +164,24 @@ Esta base de datos se diseñó tomando como referencia la siguiente norma oficia
 📄 NORMA Oficial Mexicana NOM-024-SSA3-2010
 **"Que establece los objetivos funcionales y funcionalidades que deberán observar los productos de sistemas de expediente clínico electrónico..."**
 
-Fuente: NOM-024-SSA3-2010 - DOF
+**Fuente: NOM-024-SSA3-2010 - DOF**
 
 Se consideraron principios de:
 
-Interoperabilidad
+* Interoperabilidad
 
-Confidencialidad y seguridad
+* Confidencialidad y seguridad
 
-Uso de catálogos oficiales
+* Uso de catálogos oficiales
 
-Procesamiento clínico válido
+* Procesamiento clínico válido
 
 ## 🧮 Fuentes de Datos Utilizadas
-SAT – Claves de productos o servicios
-https://www.gob.mx/sat/acciones-y-programas/consulta-mas-claves-de-productos-o-servicios-sugeridas-asi-como-su-claves-de-unidades-de-medida
+[SAT – Claves de productos o servicios](https://www.gob.mx/sat/acciones-y-programas/consulta-mas-claves-de-productos-o-servicios-sugeridas-asi-como-su-claves-de-unidades-de-medida)
 
-Medicamentos PLM – Catálogo de medicamentos
-https://www.medicamentosplm.com/
+[Medicamentos PLM – Catálogo de medicamentos](https://www.medicamentosplm.com/)
 
-Servicio Postal Mexicano – Catálogo Nacional de Códigos Postales
-https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/CodigoPostal_Exportar.aspx
+[Servicio Postal Mexicano – Catálogo Nacional de Códigos Postales](https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/CodigoPostal_Exportar.aspx)
 
 ## ✅ Conclusión
 
