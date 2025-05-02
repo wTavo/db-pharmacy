@@ -1,3 +1,11 @@
+<h1 align="center">
+  <br>
+    <a href="https://github.com/ninpl/README-Template"><img src="./res/logo.png" alt="LogoRepo" width="100"></a>
+  <br>
+  Pharmacy DataBase
+  <br>
+</h1>
+
 # 📦 Base de Datos para Farmacia con Entrega a Domicilio
 
 Este repositorio contiene la estructura de una base de datos orientada al manejo de productos farmacéuticos, ventas, usuarios, direcciones, recetas médicas y control de roles enfocada para una aplicación móvil de tipo delivery para farmacias.
